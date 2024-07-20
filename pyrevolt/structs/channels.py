@@ -440,7 +440,7 @@ class Message:
             await self.update(result)
 
     async def Delete(self) -> None:
-        if self.author is self.sesison.self:
+        if self.author is self.sessison.self:
             await self.session.Request(Method.DELETE, f"/channels/{self.channel.channelID}/messages/{self.messageID}")
         else:
             if self.channel.type == ChannelType.SavedMessages | ChannelType.DirectMessage | ChannelType.Group:
